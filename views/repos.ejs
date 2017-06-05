@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github User- <%= user %> repos</title>
+  </head>
+  <body>
+    <% if(repos && repos.length) { %>
+    <h3><%= user%>'s repo list</h3>
+    <ul>
+      <% repos.forEach(function(repo){ %>
+        <li style="margin-top:15px">
+          <a href="<%= repo.html_url %>"><%= repo.name %></a>
+          <span style="display:block; font-size:14px">language: <%= repo.language %></span>
+        </li>
+      <% })%>
+    </ul>
+    <% } else {%>
+      <p><%= user %>' has no repo</p>
+    <% } %>
+    
+  </body>
+</html>

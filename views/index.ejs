@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Github User</title>
+  </head>
+  <body>
+  	<form action="/user" method="GET"> 
+  		<div> 
+  			<label>Github User:</label>
+  			<input type="text" name="user" placeholder="search...">
+  			<input type="submit" value="search">
+  		</div>
+  	</form>
+    <script>
+      var text = document.querySelector('[type=text]')
+      var form = document.forms[0]
+      var pattern = /^[\u0000-\u007F]+$/
+      
+
+      form.onsubmit = function(e){
+        if(!pattern.test(text.value)){
+          e.preventDefault()
+          location.reload(null)
+        }
+          
+      }
+
+    </script>
+  </body>
+</html>

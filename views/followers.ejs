@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github User- <%= user %> followers</title>
+  </head>
+  <body>
+    <% if(followers && followers.length) { %>
+    <h3><%= user%>'s followers list</h3>
+    <ul>
+      <% followers.forEach(function(follower){ %>
+        <li style="margin-top:15px">
+          <a href="/user/<%= follower.login%>"><%= follower.login %></a>
+        </li>
+      <% })%>
+    </ul>
+    <% } else {%>
+      <p><%= user %>' has no followers</p>
+    <% } %>
+    
+  </body>
+</html>
